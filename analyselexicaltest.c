@@ -5,8 +5,8 @@
 
 void main(){
 
-int i,ic=0,m,cc=0,oc=0,mc=0,j;
-char chaine[30],operators[30],identifiers[30],constants[30],motcle[30];
+int i,ic=0,m,cc=0,oc=0,mc=0,sp=0,j;
+char chaine[30],operators[30],identifiers[30],constants[30],motcle[30],separators[30];
 
 printf(" TAPEZ LE CODE ICI : ");
 scanf("%[^\n]s",&chaine);
@@ -16,7 +16,7 @@ for(i=0;i<strlen(chaine);i++){
         continue;
     }
     else if(isalpha(chaine[i])){
-        if((chaine[i]=='n')|| (chaine[i]=='i')||(chaine[i]=='j')){
+        if((chaine[i]=='n')|| (chaine[i]=='i')&&(chaine[i+1]=="")||(chaine[i]=='j')){
         identifiers[ic] =chaine[i];
          ic++;}
          else if((chaine[i]=='f')&&(chaine[i+1]=='i')&&(chaine[i+2]=='b')){
@@ -63,7 +63,7 @@ for(i=0;i<strlen(chaine);i++){
          }
          else if((chaine[i]=='i')&&(chaine[i+1]=='n')&&(chaine[i+2]=='t')){
           j=0;
-          while(j<3){
+          while(j<4){
         motcle[mc] =chaine[i];
         i++;
         j++;
@@ -146,27 +146,52 @@ for(i=0;i<strlen(chaine);i++){
             operators[oc]=':=';
             oc++;
         }
+        else if(chaine[i]==';'){
+            separators[sp]=';';
+            sp++;
+        }
+        else if(chaine[i]==','){
+            separators[sp]=',';
+            sp++;
+        }
+        else if(chaine[i]=='('){
+            separators[sp]='(';
+            sp++;
+        }
+        else if(chaine[i]==')'){
+            separators[sp]=')';
+            sp++;
+        }
+        else if(chaine[i]==':'){
+            separators[sp]=':';
+            sp++;
+        }
   } }
 
 //****************************L AFFICHAGE**********************************
 
-    printf(" identificateurs : ");
+    printf(" \n\n| identificateurs | ");
      for(j=0;j<ic;j++){
         printf("%c ",identifiers[j]);
      }
-     if(ic==0) printf("VIDE!");
-    printf("\n constantes : ");
+     if(ic==0) printf(" C EST VIDE!");
+    printf("\n\n  | constantes | ");
      for(j=0;j<cc;j++){
         printf("%d ",constants[j]);
-     } if(cc==0) printf("VIDE!");
-    printf("\n operateurs : ");
+     } if(cc==0) printf(" C EST VIDE!");
+    printf("\n\n | operateurs | ");
       for(j=0;j<oc;j++){
         printf("%c ",operators[j]);
-      } if(oc==0) printf("VIDE!");
-      printf("\n mot cle : ");
+      } if(oc==0) printf(" C EST VIDE!");
+      printf("\n\n | mot cle | ");
       for(j=0;j<mc;j++){
         printf("%c ",motcle[j]);
-      } if(mc==0) printf("VIDE!");
+      } if(mc==0) printf(" C EST VIDE!");
+       printf("\n\n | separateurs | ");
+      for(j=0;j<sp;j++){
+        printf("%c ",separators[j]);
+      } if(sp==0) printf(" C EST VIDE!");
+
 
 
 }
