@@ -16,8 +16,8 @@ for(i=0;i<strlen(chaine);i++){
         continue;
     }
     else if(isalpha(chaine[i])){
-        if((chaine[i]=='n')|| (chaine[i]=='i')&&(chaine[i+1]=="")||(chaine[i]=='j')){
-        identifiers[ic] =chaine[i];
+        if((chaine[i]=='n')|| (chaine[i]=='i')&&(chaine[i+1]!='n')||(chaine[i]=='j')){
+        identifiers[ic]=chaine[i];
          ic++;}
          else if((chaine[i]=='f')&&(chaine[i+1]=='i')&&(chaine[i+2]=='b')){
         j=0;
@@ -123,7 +123,8 @@ for(i=0;i<strlen(chaine);i++){
         i=i-1;
         if(m==0||m==1){
         constants[cc]=m;
-        cc++;} else printf("ERREUR! %d EST UNE CONSTANTE NON RECONNU ON ACCEPTE SEULEMENT 0 ET 1 \n", m);
+        cc++;}
+        else printf("ERREUR! %d EST UNE CONSTANTE NON RECONNU ON ACCEPTE SEULEMENT 0 ET 1 \n", m);
     }
      else{
         /*if(chaine[i]=='*'){
@@ -204,7 +205,7 @@ for(i=0;i<strlen(chaine);i++){
         }
       } if(oc==0) printf(" C EST VIDE!");
       printf("\n\n | mot cle | ");
-      for(i=0;i<mc;i++){//then end
+      for(i=0;i<mc;i++){
             if((motcle[i]=='p')&&(motcle[i+1]=='r')&&(motcle[i+2]=='o')&&(motcle[i+3]=='g')&&(motcle[i+4]=='r')&&(motcle[i+5]=='a')&&(motcle[i+6]=='m')){
                 printf(" program ");
             } else if((motcle[i]=='v')&&(motcle[i+1]=='a')&&(motcle[i+2]=='r')){
