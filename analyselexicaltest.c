@@ -2,8 +2,7 @@
 #include<conio.h>
 #include<ctype.h>
 #include<string.h>
-//MOKHBAT SELMA && AMOURA YOUCEF
-//L3 ISIL B
+
 //ANALYSEUR LEXICAL DE L'EXERCICE 4 SERIE 1.
 
 void main(){
