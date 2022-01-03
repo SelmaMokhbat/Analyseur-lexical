@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1639504359 source:f:\selma etude\s5\tp compil\test\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	<math.h>
-

@@ -2,6 +2,9 @@
 #include<conio.h>
 #include<ctype.h>
 #include<string.h>
+//MOKHBAT SELMA && AMOURA YOUCEF
+//L3 ISIL B
+//ANALYSEUR LEXICAL DE L'EXERCICE 4 SERIE 1.
 
 void main(){
 
@@ -127,11 +130,11 @@ for(i=0;i<strlen(chaine);i++){
         else printf("ERREUR! %d EST UNE CONSTANTE NON RECONNU ON ACCEPTE SEULEMENT 0 ET 1 \n", m);
     }
      else{
-        /*if(chaine[i]=='*'){
+        if(chaine[i]=='*'){
             operators[oc]='*';
             oc++;
         }
-        else*/ if(chaine[i]=='-'){
+        else if(chaine[i]=='-'){
             operators[oc]='-';
             oc++;
         }
@@ -139,7 +142,7 @@ for(i=0;i<strlen(chaine);i++){
             operators[oc]='+';
             oc++;
         }
-         else if(chaine[i]=='='){
+         else if((chaine[i-1]!=':')&&(chaine[i]=='=')){
             operators[oc]='=';
             oc++;
         }
@@ -188,22 +191,25 @@ for(i=0;i<strlen(chaine);i++){
         }
      }
      if(ic==0) printf(" C EST VIDE!");
+     //CONSTANTES
     printf("\n\n  | constantes | ");
      for(j=0;j<cc;j++){
         printf("%d ",constants[j]);
      } if(cc==0) printf(" C EST VIDE!");
+     //OPERATEUR
     printf("\n\n | operateurs | ");
       for(j=0;j<oc;j++){
         if((operators[j]==':')&&(operators[j+1]=='=')){
             printf(" := ");
-        }/* else if(operators[j]=='='){
+        } else if((operators[j-1]!=':')&&(operators[j]=='=')){
             printf(" = ");
-        } */else if(operators[j]=='+'){
+        } else if(operators[j]=='+'){
             printf(" + ");
         } else if(operators[j]=='-'){
             printf(" - ");
         }
       } if(oc==0) printf(" C EST VIDE!");
+      //MOT CLE
       printf("\n\n | mot cle | ");
       for(i=0;i<mc;i++){
             if((motcle[i]=='p')&&(motcle[i+1]=='r')&&(motcle[i+2]=='o')&&(motcle[i+3]=='g')&&(motcle[i+4]=='r')&&(motcle[i+5]=='a')&&(motcle[i+6]=='m')){
@@ -228,6 +234,7 @@ for(i=0;i<strlen(chaine);i++){
 
 
       } if(mc==0) printf(" C EST VIDE!");
+      //SEPARATEUR
        printf("\n\n | separateurs | ");
       for(j=0;j<sp;j++){
         printf("%c ",separators[j]);
