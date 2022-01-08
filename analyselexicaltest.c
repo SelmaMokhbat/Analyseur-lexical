@@ -16,7 +16,7 @@ for(i=0;i<strlen(chaine);i++){
 
     if(isspace(chaine[i])){
         continue;
-    }
+    }// dans le cas ou c'est vide
     else if(isalpha(chaine[i])){
         if((chaine[i]=='n')|| (chaine[i]=='i')&&(chaine[i+1]!='n')||(chaine[i]=='j')){
         identifiers[ic]=chaine[i];
@@ -111,29 +111,29 @@ for(i=0;i<strlen(chaine);i++){
         j++;
         mc++;}
          }
-         else printf("ERREUR! %c EXSITE PAS DANS CET ANALYSEUR LEXICALE \n", chaine[i]);
+         else printf("ERREUR! %c N'EXSITE PAS DANS CET ANALYSEUR LEXICALE \n", chaine[i]);
 
          }
-
-    else if(isdigit(chaine[i])){
-        m=(chaine[i]-'0');
-        i=i+1;
+// dans le cas ou c'est un nombre
+    else if(isdigit(chaine[i])){//tester les constantes on accepte seulement 0 et 1
+        m=(chaine[i]-'0'); //pour le code ascii
+       /* i=i+1;
         while(isdigit(chaine[i])){
-            m=m*10 + (chaine[i]-'0');
+            m=m*10 + (chaine[i]-'0'); //on multiplie *10 pour par exemple si on 90
             i++;
         }
-        i=i-1;
+        i=i-1;*/
         if(m==0||m==1){
         constants[cc]=m;
         cc++;}
-        else printf("ERREUR! %d EST UNE CONSTANTE NON RECONNU ON ACCEPTE SEULEMENT 0 ET 1 \n", m);
+        else printf("ERREUR! %d EST UNE CONSTANTE NON RECONNU, ON ACCEPTE SEULEMENT 0 ET 1 \n", m);
     }
      else{
-        if(chaine[i]=='*'){
+        /*if(chaine[i]=='*'){
             operators[oc]='*';
             oc++;
         }
-        else if(chaine[i]=='-'){
+        else*/ if(chaine[i]=='-'){
             operators[oc]='-';
             oc++;
         }
@@ -175,7 +175,7 @@ for(i=0;i<strlen(chaine);i++){
 
 //****************************L AFFICHAGE**********************************
 
-    printf(" \n\n| identificateurs | ");
+    printf(" \n\n  ||IDENTIFICATEURS||   ");
      for(j=0;j<ic;j++){
         if((identifiers[j]=='t')&&(identifiers[j+1]=='e')&&(identifiers[j+2]=='s')&&(identifiers[j+3]=='t')){
          printf(" test ");
@@ -191,12 +191,12 @@ for(i=0;i<strlen(chaine);i++){
      }
      if(ic==0) printf(" C EST VIDE!");
      //CONSTANTES
-    printf("\n\n  | constantes | ");
+    printf("\n\n   ||CONSTANTES||  ");
      for(j=0;j<cc;j++){
         printf("%d ",constants[j]);
      } if(cc==0) printf(" C EST VIDE!");
      //OPERATEUR
-    printf("\n\n | operateurs | ");
+    printf("\n\n  ||OPERATEURS||   ");
       for(j=0;j<oc;j++){
         if((operators[j]==':')&&(operators[j+1]=='=')){
             printf(" := ");
@@ -209,7 +209,7 @@ for(i=0;i<strlen(chaine);i++){
         }
       } if(oc==0) printf(" C EST VIDE!");
       //MOT CLE
-      printf("\n\n | mot cle | ");
+      printf("\n\n ||MOT CLE|| ");
       for(i=0;i<mc;i++){
             if((motcle[i]=='p')&&(motcle[i+1]=='r')&&(motcle[i+2]=='o')&&(motcle[i+3]=='g')&&(motcle[i+4]=='r')&&(motcle[i+5]=='a')&&(motcle[i+6]=='m')){
                 printf(" program ");
@@ -234,7 +234,7 @@ for(i=0;i<strlen(chaine);i++){
 
       } if(mc==0) printf(" C EST VIDE!");
       //SEPARATEUR
-       printf("\n\n | separateurs | ");
+       printf("\n\n ||SEPARATEURS||  ");
       for(j=0;j<sp;j++){
         printf("%c ",separators[j]);
       } if(sp==0) printf(" C EST VIDE!");
