@@ -176,7 +176,7 @@ for(i=0;i<strlen(chaine);i++){
 //****************************L AFFICHAGE**********************************
 
     printf(" \n\n  ||IDENTIFICATEURS||   ");
-     for(j=0;j<ic;j++){
+     for(j=0;j<ic;j++){ //pour afficher un truc du genre test fib... i n j
         if((identifiers[j]=='t')&&(identifiers[j+1]=='e')&&(identifiers[j+2]=='s')&&(identifiers[j+3]=='t')){
          printf(" test ");
         } else if ((identifiers[j]=='f')&&(identifiers[j+1]=='i')&&(identifiers[j+2]=='b')){
@@ -210,7 +210,7 @@ for(i=0;i<strlen(chaine);i++){
       } if(oc==0) printf(" C EST VIDE!");
       //MOT CLE
       printf("\n\n ||MOT CLE|| ");
-      for(i=0;i<mc;i++){
+      for(i=0;i<mc;i++){//program var int if else begin then return
             if((motcle[i]=='p')&&(motcle[i+1]=='r')&&(motcle[i+2]=='o')&&(motcle[i+3]=='g')&&(motcle[i+4]=='r')&&(motcle[i+5]=='a')&&(motcle[i+6]=='m')){
                 printf(" program ");
             } else if((motcle[i]=='v')&&(motcle[i+1]=='a')&&(motcle[i+2]=='r')){
