@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<conio.h>
-#include<ctype.h>
-#include<string.h>
+#include<stdio.h> //il indique au compilateur d'utiliser les fonctions les structures
+#include<conio.h> //fournir des entres sorties de console
+#include<ctype.h> // les fonctions de tests de caractères
+#include<string.h> //pour les chaines de caractères
 
 //ANALYSEUR LEXICAL DE L'EXERCICE 4 SERIE 1.
 
